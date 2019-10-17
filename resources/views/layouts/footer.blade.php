@@ -2,7 +2,7 @@
     <div class="footernav">
         <div class="container">
             <div class="footer-logo" data-aos-easing="ease-out-cubic" data-aos="fade-right" data-aos-duration="1000">
-                <a href="index.html">
+                <a href="/">
                     <img src="images/footer-logo.jpg" alt="footer-logo" class="img-fluid">
                 </a>
             </div>
