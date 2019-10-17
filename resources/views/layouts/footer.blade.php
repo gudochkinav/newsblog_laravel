@@ -1,4 +1,4 @@
-<footer class="container-fluid">
+<footer class="container-fluid container-footer">
     <div class="footernav">
         <div class="container">
             <div class="footer-logo" data-aos-easing="ease-out-cubic" data-aos="fade-right" data-aos-duration="1000">
