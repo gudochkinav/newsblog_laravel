@@ -1,25 +1,29 @@
 <nav class="navbar navbar-expand navbar-light" data-aos-easing="ease-out-cubic" data-aos="fade-left" data-aos-duration="1000">
-
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a class="nav-link" href="/">Home
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="services.html">services</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link activeheader" href="blog.html">read blog</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="portfolio.html">portfolio</a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="contact.html">contact</a>
-        </li>
+        @if (Route::has('index'))
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('/') ? 'activeheader' : ''}}" href="{{ route('index') }}">{{ trans('menu.main.home') }}</a>
+            </li>
+        @endif
+        @if (Route::has('services'))
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('services') ? 'activeheader' : ''}}" href="{{ route('services') }}">{{ trans('menu.main.services') }}</a>
+            </li>
+        @endif
+        @if (Route::has('blog'))
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('blog') ? 'activeheader' : ''}}" href="{{ route('blog') }}">{{ trans('menu.main.blog') }}</a>
+            </li>
+        @endif
+        @if (Route::has('portfolio'))
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('portfolio') ? 'activeheader' : ''}}" href="{{ route('portfolio') }}">{{ trans('menu.main.portfolio') }}</a>
+            </li>
+        @endif
+        @if (Route::has('contact'))
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('contact') ? 'activeheader' : ''}}" href="{{ route('contact') }}">{{ trans('menu.main.contact') }}</a>
+            </li>
+        @endif
     </ul>
-
 </nav>

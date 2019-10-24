@@ -3,7 +3,7 @@
         <img src="images/gradient.jpg" alt="gradient" class="img-fluid">
     </div>
 
-    @include('layouts.main-menu')
+    @include('layouts.header-menu')
     
 </header>
 
