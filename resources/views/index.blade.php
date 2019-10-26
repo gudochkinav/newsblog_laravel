@@ -29,7 +29,7 @@
 
     @include('layouts.header')
 
-    {!! $content !!}
+    @yield('content')
 
     @include('layouts.footer')
 

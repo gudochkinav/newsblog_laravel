@@ -9,7 +9,6 @@ class Menu extends Model
     protected $table = 'menu';
     protected $fillable = ['name', 'link', 'sort'];
 
-
     public $timestamps = false;
     
     public function get() : array
