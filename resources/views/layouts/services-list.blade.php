@@ -10,7 +10,7 @@
                 <img src="{{ asset($item['image_url']) }}" alt="webdesign">
             </div>
             <div class="col-12 col-lg-6 p-37" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1000">
-                <p>{!! $item['description'] !!}</p>
+                <p>{!! $item->getDescription() !!}</p>
             </div>
         </div>
         @endforeach

@@ -16,7 +16,7 @@ class SiteController extends Controller {
         $portfolioShortList = $portfolio->getShortList();
         
         $services = new Services();
-        $servicesShortList = $services->getShortList();
+        $servicesShortList = Services::orderBy('created_at', 'desc')->limit(4)->get();
         
         $testimonials = new Testimonials();
         $testimonialsList = $testimonials->get();
@@ -35,7 +35,7 @@ class SiteController extends Controller {
     
     public function services() 
     {
-        $servicesList = Services::orderBy('created_at', 'desc')->get()->toArray();
+        $servicesList = Services::orderBy('created_at', 'desc')->get();
 
         return view('services')->with(['services_list' => $servicesList]);
     }

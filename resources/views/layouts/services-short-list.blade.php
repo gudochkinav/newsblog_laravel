@@ -12,7 +12,7 @@
                             <h3>{{ $item['name'] }}</h3>
                         </a>
                     </div>
-                    {!! $item['description'] !!}
+                    {!! $item->getDescription() !!}
                 </div>
             @endforeach
            
