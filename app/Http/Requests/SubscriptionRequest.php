@@ -25,7 +25,7 @@ class SubscriptionRequest extends FormRequest
     {
         return [
             'name' => 'required|min:3|max:255',
-            'email' => 'required|max:255'
+            'email' => 'required|max:255|email:rfc,dns'
         ];
     }
     

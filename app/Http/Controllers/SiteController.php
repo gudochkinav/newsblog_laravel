@@ -32,4 +32,11 @@ class SiteController extends Controller {
                     'articles_short_list' => $articlesShortList
                 ]);
     }
+    
+    public function services() 
+    {
+        $servicesList = Services::orderBy('created_at', 'desc')->get()->toArray();
+
+        return view('services')->with(['services_list' => $servicesList]);
+    }
 }
