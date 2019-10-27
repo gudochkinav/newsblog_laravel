@@ -13,12 +13,9 @@ class SubscribeController extends Controller
         $name = $request->name;
         $email = $request->email;
         
-        $subscription = new Subscription();
-        $subscription->fill([
-            'name' => $name, 
-            'email' => $email
-        ]);
-        $subscription->save();
+        $subscription = Subscription::firstOrCreate(['email' => $email], ['name' => $name]);
+        
+        $subscription->subscribe();
         
         return redirect()->back();
     }
