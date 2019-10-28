@@ -35,7 +35,7 @@ class SiteController extends Controller {
 
     public function services(Request $request) 
     {
-        $servicesList = Services::orderBy('created_at', 'desc')->paginate(2);
+        $servicesList = Services::orderBy('created_at', 'desc')->paginate(10);
         return view('services', ['services_list' => $servicesList]);
     }
 }
