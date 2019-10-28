@@ -15,7 +15,7 @@
                     {!! $item->getDescription() !!}
                 </div>
             @endforeach
-           
+                       
             <div class="col-12 col-md-8 col-lg-9 content-para" data-aos-easing="ease-out-cubic" data-aos="fade-right" data-aos-duration="1000">
                 <p>See how whitey helps you, creating worlds wonderful theme</p>
                 <p>specialized in webdesign, wordpress development and much much more</p>

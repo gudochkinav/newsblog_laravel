@@ -14,13 +14,13 @@ class SiteController extends Controller {
     {
         $portfolio = new Portfolio();
         $portfolioShortList = $portfolio->getShortList();
-        
+
         $services = new Services();
         $servicesShortList = Services::orderBy('created_at', 'desc')->limit(4)->get();
-        
+
         $testimonials = new Testimonials();
         $testimonialsList = $testimonials->get();
-        
+
         $articles = new Articles();
         $articlesShortList = $articles->get(6);
 
@@ -32,11 +32,10 @@ class SiteController extends Controller {
                     'articles_short_list' => $articlesShortList
                 ]);
     }
-    
-    public function services() 
-    {
-        $servicesList = Services::orderBy('created_at', 'desc')->get();
 
-        return view('services')->with(['services_list' => $servicesList]);
+    public function services(Request $request) 
+    {
+        $servicesList = Services::orderBy('created_at', 'desc')->paginate(2);
+        return view('services', ['services_list' => $servicesList]);
     }
 }

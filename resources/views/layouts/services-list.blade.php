@@ -1,3 +1,9 @@
+<style>
+    .page-link {
+        width: 32px !important;
+        height: 36px !important;
+    }
+</style>
 @if (count($services_list))
 <section class="services">
     <div class="container">
@@ -14,6 +20,10 @@
             </div>
         </div>
         @endforeach
+        
+        <div class="pagination-wrapper">
+            {{ $services_list->links() }}
+        </div>
     </div>
 </section>
 @endif
