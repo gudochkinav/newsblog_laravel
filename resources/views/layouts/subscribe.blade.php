@@ -16,7 +16,7 @@
             <p>we usually dont spam, but sent you interesting...</p>
         </div>
 
-        <form method="POST" action="{{ route('subscribe') }}">
+        <form method="POST" action="{{ route('subscribe') }}" id="subscribe">
             @csrf
             <ul data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1200">
                 <li class="m-20">
@@ -32,7 +32,7 @@
                     @endif
                 </li>
                 <li>
-                    <button type="submit">subscribe to Newsletter</button>
+                    <button form="subscribe" type="submit">subscribe to Newsletter</button>
                 </li>
             </ul>
         </form>

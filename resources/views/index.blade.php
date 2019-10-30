@@ -3,6 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="https://fonts.googleapis.com/css?family=Hammersmith+One:400" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
