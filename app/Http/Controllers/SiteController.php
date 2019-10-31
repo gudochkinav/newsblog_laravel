@@ -35,6 +35,13 @@ class SiteController extends Controller {
         $articlesList = Articles::orderBy('created_at', 'desc')->limit(12)->get();
         return view('blog', ['articles_list' => $articlesList]);
     }
+    
+    public function article(Request $request) 
+    {
+        $article = Articles::where(['slug' => $request->name])->firstOrFail();
+
+        return view('article', ['article' => $article]);
+    }
 
     public function portfolio(Request $request) 
     {
