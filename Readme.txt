@@ -13,4 +13,4 @@
 7. Create articles table
     create table `articles` (`id` int(11) not null auto_increment, `name` varchar(255) not null, `slug` varchar(255) not null, `preview_image_url` varchar(255) null, `text` text not null, `category_id` int(11) null default 0, `related_articles` text null, `created_at` int(11) not null default 0, `updated_at` int(11) not null default 0, primary key(`id`)) engine=InnoDB default charset=utf8;
 8. create subscription table
-    create table `subscriptions` (`id` int(11) not null auto_increment, `name` varchar(255) not null, `email` varchar(255) not null, `status` enum(`0`, `1`) default '1', `created_at` int(11) not null default 0, `updated_at` int(11) not null default 0, primary key(`id)) engine=InnoDB default charset=utf8;
+    create table `subscribers` (`id` int(11) not null auto_increment, `name` varchar(255) not null, `email` varchar(255) not null, `status` enum('Off', 'On') default 'On', `created_at` int(11) not null default 0, `updated_at` int(11) not null default 0, primary key(`id`)) engine=InnoDB default charset=utf8;

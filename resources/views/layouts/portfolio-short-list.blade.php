@@ -15,7 +15,7 @@
                         <div class="overlay">
                             <a href="/portfolio">
                                 <figure>
-                                    <img src="{{ asset($item['image_url']) }}" alt="{{ $item['name'] }}" class="img-fluid">
+                                    <img src="{{ asset($item->getImageURL()) }}" alt="{{ $item['name'] }}" class="img-fluid">
                                 </figure>
                             </a>
                             <div class="overlay-inner">

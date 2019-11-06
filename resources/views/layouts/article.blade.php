@@ -6,7 +6,7 @@
         <p data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="900">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laaoreet
             dolore magna aliquam </p>
         <div class="social-icons" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1300">
-            <p>Dec 23, 2016 Posted by Bizzy In :
+            <p>{{ $article->getDate('M d, Y') }} Posted by {{ $article->author}} In :
                 <span>Fashion</span>
             </p>
             <span class="float-md-right">
@@ -29,7 +29,7 @@
         </div>
 
         <div class="blog-singleimg">
-            <figure style="background: url({{ $article->preview_image_url }});" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="800">
+            <figure style="background: url({{ $article->getImageURL() }});" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="800">
 
             </figure>
             <p>{!! $article->getText() !!}</p>
@@ -44,7 +44,7 @@
                 <div class="col-12 col-sm-6 m-40 {{ ($key == 2) ? 'col-lg-6' : 'col-lg-3' }}" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1000">
                     <div class="pic-overlay img1">
                         <a href="{{ route('article', $item->slug) }}">
-                            <figure style="background-image: url({{ $item->preview_image_url }});">
+                            <figure style="background-image: url({{ $item->getImageURL() }});">
                             </figure>
                             <div class="pic-text">
                                 <span>{{ $item->category->name }}</span>

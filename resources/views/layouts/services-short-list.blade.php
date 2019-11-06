@@ -6,7 +6,7 @@
                 <div class="col-12 col-sm-6 m-61" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="800">
                     <div class="content-inner">
                         <a href="/services" class="web-development">
-                            <i class="fa fa-black-tie" aria-hidden="true"></i>
+                            <i class="fa {{ $item->icon }}" aria-hidden="true"></i>
                         </a>
                         <a href="/services">
                             <h3>{{ $item['name'] }}</h3>

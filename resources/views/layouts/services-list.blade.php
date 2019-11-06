@@ -4,6 +4,7 @@
         height: 36px !important;
     }
 </style>
+
 @if (count($services_list))
 <section class="services">
     <div class="container">
@@ -12,8 +13,8 @@
         @foreach($services_list as $item)
         <div class="row services-content">
             <div class="col-12 col-lg-6" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1000">
-                <h3>{{ $item['name'] }}</h3>
-                <img src="{{ asset($item['image_url']) }}" alt="webdesign">
+                <h3 style="font-size: 32px">{{ $item['name'] }}</h3>
+                <img src="{{ $item->getImageURL() }}" alt="webdesign">
             </div>
             <div class="col-12 col-lg-6 p-37" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1000">
                 <p>{!! $item->getDescription() !!}</p>

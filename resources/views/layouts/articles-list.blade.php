@@ -14,12 +14,12 @@
                     @if (isset($articles_list[($i * 3) + $j]))
                     <div class="col-12 col-sm-6 {{ (!($i % 2) && ($j != 2)) || (($i % 2) && ($j > 0)) ? 'col-lg-3 ' : ''}} m-40" data-aos="fade-up" data-aos-easing="ease-out-cubic" data-aos-duration="1000">
                         <div class="pic-overlay">
-                            <a href="{{ route('article', $articles_list[($i * 3) + $j]['slug']) }}">
-                                <figure style="background-image: url({{ $articles_list[($i * 3) + $j]['preview_image_url'] }});">
+                            <a href="{{ route('article', $articles_list[($i * 3) + $j]->slug) }}">
+                                <figure style="background-image: url({{ $articles_list[($i * 3) + $j]->getImageURL() }});">
 
                                 </figure>
                                 <div class="pic-text">
-                                    <span>CATEGORY</span>
+                                    <span>{{ $articles_list[($i * 3) + $j]->category->name }}</span>
                                     <p>{{ $articles_list[($i * 3) + $j]['name'] }}</p>
                                 </div>
                             </a>

@@ -2,16 +2,44 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 
 class Portfolio extends Model {
-    protected $table = 'portfolio';
-    protected $fillable = ['name', 'image_name', 'created_at', 'updated_at'];
+    const IMAGES_FOLDER = 'public/images/portfolio';
 
-    private $imageStorePrefix = 'portfolio';
-    
-    public function getShortList(int $count = 3) : array {
+    protected $table = 'portfolio';
+    protected $fillable = ['name', 'image', 'active', 'created_at', 'updated_at'];
+    protected $dateFormat = 'U';
+
+    public function getShortList(int $count = 3) : array 
+    {
         return Portfolio::orderBy('created_at', 'desc')->limit($count)->get()->toArray();
     }
+    
+    public function setImage($file) 
+    {
+        if (!$file) 
+        {
+            return;
+        }
+        
+        Storage::delete($this->image);
+        $this->image = Storage::putFile(Portfolio::IMAGES_FOLDER, $file);
+    }
 
+    public function getImageURL() : string
+    {
+        if (!$this->image) 
+        {
+            return '';
+        }
+
+        return Storage::url($this->image);
+    }
+    
+    public function getActiveStatusesList() : array
+    {
+        return ['Off', 'On'];
+    }
 }

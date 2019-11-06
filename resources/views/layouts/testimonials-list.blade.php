@@ -14,7 +14,7 @@
                         @foreach($testimonials_list as $key => $item)
                         <div class="carousel-item {{ ($key == 0) ? 'active' : ''}}">
                             <figure class="float-md-left carousel-0">
-                                <img src="{{ asset($item['image_url']) }}" alt="First slide" class="img-fluid">
+                                <img src="{{ $item->getImageURL() }}" alt="First slide" class="img-fluid">
                             </figure>
 
                             <div class="inner-content">

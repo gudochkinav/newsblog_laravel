@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SubscriptionRequest;
-use App\Models\Subscription;
+use App\Models\Subscriber;
 
 class SubscribeController extends Controller 
 {
@@ -13,7 +13,7 @@ class SubscribeController extends Controller
         $name = $request->name;
         $email = $request->email;
         
-        $subscription = Subscription::firstOrCreate(['email' => $email], ['name' => $name]);
+        $subscription = Subscriber::firstOrCreate(['email' => $email], ['name' => $name]);
         
         $subscription->subscribe();
         
