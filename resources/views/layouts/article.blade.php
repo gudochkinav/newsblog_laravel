@@ -54,24 +54,4 @@
     </div>
 </section>
 
-<script>
-    function post() {
-        var url = "{{ route('vk_auth', 'post') }}";
-        var data = {link : "{{ route('article', $article->slug) }}" };
-        
-        $.ajax({
-            url : url,
-            method : 'GET',
-            data : data,
-            dataType : 'json',
-            success : function (data) {
-                window.open(data.redirect_url);
-            },
-            error : function (result) {
-                
-            }
-        });
-    }
-</script>
-
 @endif
