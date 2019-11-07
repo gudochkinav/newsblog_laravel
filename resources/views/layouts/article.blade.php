@@ -1,7 +1,14 @@
 @if (isset($article))
+
+<style>
+    #st-1 .st-btn:last-child {
+        display: inline-block !important;
+    }
+</style>
+
 <section class="blog-single">
     <div class="container">
-        <h3 data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1000">read our blog</h3>
+        <h1 data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1000">{{ $article->name }}</h1>
         <span class="line" data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="1000"></span>
         <p data-aos-easing="ease-out-cubic" data-aos="fade-up" data-aos-duration="900">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laaoreet
             dolore magna aliquam </p>
@@ -10,21 +17,7 @@
                 <span>Fashion</span>
             </p>
             <span class="float-md-right">
-                <a href="https://www.facebook.com">
-                    <i class="fa fa-facebook fb">
-                        <span>1.2m</span>
-                    </i>
-                </a>
-                <a href="https://www.twitter.com">
-                    <i class="fa fa-twitter twit">
-                        <span>448.6k</span>
-                    </i>
-                </a>
-                <a href="https://www.pinterest.com">
-                    <i class="fa fa-pinterest pin">
-                        <span>111.7k</span>
-                    </i>
-                </a>
+                <div class="sharethis-inline-share-buttons share-link-wrapper"></div>
             </span>
         </div>
 
@@ -60,4 +53,25 @@
         
     </div>
 </section>
+
+<script>
+    function post() {
+        var url = "{{ route('vk_auth', 'post') }}";
+        var data = {link : "{{ route('article', $article->slug) }}" };
+        
+        $.ajax({
+            url : url,
+            method : 'GET',
+            data : data,
+            dataType : 'json',
+            success : function (data) {
+                window.open(data.redirect_url);
+            },
+            error : function (result) {
+                
+            }
+        });
+    }
+</script>
+
 @endif
