@@ -2,6 +2,7 @@
 
 return [
     'admin_email' => env('ADMIN_EMAIL'),
+    'horizon_moderator_email' => env('HORIZON_MODERATOR_EMAIL'),
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -174,6 +175,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\HorizonServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
     ],

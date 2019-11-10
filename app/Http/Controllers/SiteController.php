@@ -10,7 +10,7 @@ use App\Models\Article;
 use App\Http\Requests\PhotosLoadMoreRequest;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactFeedback;
-use Illuminate\Support\Facades\Mail;
+use App\Jobs\SendFeedbackEmail;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller {
@@ -71,9 +71,9 @@ class SiteController extends Controller {
         return view('contact');
     }
     
-    public function sendFeedback(ContactRequest $request) {
-        $result = Mail::to($request->email)
-            ->send(new ContactFeedback($request->name, $request->email, $request->phone, $request->text));
+    public function sendFeedback(ContactRequest $request) 
+    {
+        dispatch(new SendFeedbackEmail(new ContactFeedback($request->name, $request->email, $request->phone, $request->text)));
         
         return redirect()->back()->with(['message' => 'Email was sending.']);
     }

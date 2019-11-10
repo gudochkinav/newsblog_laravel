@@ -16,7 +16,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5dc4421a19440c0012abd4a6&product=inline-share-buttons" async="async"></script>
+        <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5dc4421a19440c0012abd4a6&cms=website' async='async'></script>
         <script src="/js/script.js"></script>
 
         <title>
