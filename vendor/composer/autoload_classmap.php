@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Events\\UserSubscribed' => $baseDir . '/app/Events/UserSubscribed.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Admin\\AdminController' => $baseDir . '/app/Http/Controllers/Admin/AdminController.php',
     'App\\Http\\Controllers\\Admin\\ArticleController' => $baseDir . '/app/Http/Controllers/Admin/ArticleController.php',
@@ -34,7 +35,10 @@ return array(
     'App\\Http\\Requests\\ServiceRequest' => $baseDir . '/app/Http/Requests/ServiceRequest.php',
     'App\\Http\\Requests\\SubscriptionRequest' => $baseDir . '/app/Http/Requests/SubscriptionRequest.php',
     'App\\Jobs\\SendFeedbackEmail' => $baseDir . '/app/Jobs/SendFeedbackEmail.php',
+    'App\\Jobs\\SendUserSubscribedEmail' => $baseDir . '/app/Jobs/SendUserSubscribedEmail.php',
+    'App\\Listeners\\SendUserSubscribedNotification' => $baseDir . '/app/Listeners/SendUserSubscribedNotification.php',
     'App\\Mail\\ContactFeedback' => $baseDir . '/app/Mail/ContactFeedback.php',
+    'App\\Mail\\UserSubscribedNotification' => $baseDir . '/app/Mail/UserSubscribedNotification.php',
     'App\\Models\\Article' => $baseDir . '/app/Models/Article.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Menu' => $baseDir . '/app/Models/Menu.php',

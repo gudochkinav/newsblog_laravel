@@ -7,28 +7,29 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactFeedback extends Mailable
+class UserSubscribedNotification extends Mailable
 {
     use Queueable, SerializesModels;
-    
-    public $name;
-    public $email;
-    public $phone;
-    public $text;
-    public $subject;
 
+    public $name;
+    
+    public $email;
+    
+    public $subject;
+    
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(string $name, string $email, string $phone, string $text, string $subject = '')
+    public function __construct(string $name, string $email, string $subject = '')
     {
         $this->name = $name;
         $this->email = $email;
-        $this->phone = $phone;
-        $this->text = $text;
-        $this->subject = $subject ? $subject : trans('mail.contact_feedback.subject');
+        $subject = $subject ? $subject : trans('mail.user_subscribed_notification.subject');
+
+        $this->from(config('app.support_email'));
+        $this->subject($subject);
     }
 
     /**
@@ -38,9 +39,6 @@ class ContactFeedback extends Mailable
      */
     public function build()
     {
-        return $this->from($this->email)
-                    ->to(config('app.admin_email'))
-                    ->subject($this->subject)
-                    ->view('mail.contact');
+        return $this->view('mail.user-subscribed-notification');
     }
 }

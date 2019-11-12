@@ -388,6 +388,7 @@ class ComposerStaticInitfcb24c29a4c62c2802915aaafde94713
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\UserSubscribed' => __DIR__ . '/../..' . '/app/Events/UserSubscribed.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminController.php',
         'App\\Http\\Controllers\\Admin\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ArticleController.php',
@@ -415,7 +416,10 @@ class ComposerStaticInitfcb24c29a4c62c2802915aaafde94713
         'App\\Http\\Requests\\ServiceRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ServiceRequest.php',
         'App\\Http\\Requests\\SubscriptionRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SubscriptionRequest.php',
         'App\\Jobs\\SendFeedbackEmail' => __DIR__ . '/../..' . '/app/Jobs/SendFeedbackEmail.php',
+        'App\\Jobs\\SendUserSubscribedEmail' => __DIR__ . '/../..' . '/app/Jobs/SendUserSubscribedEmail.php',
+        'App\\Listeners\\SendUserSubscribedNotification' => __DIR__ . '/../..' . '/app/Listeners/SendUserSubscribedNotification.php',
         'App\\Mail\\ContactFeedback' => __DIR__ . '/../..' . '/app/Mail/ContactFeedback.php',
+        'App\\Mail\\UserSubscribedNotification' => __DIR__ . '/../..' . '/app/Mail/UserSubscribedNotification.php',
         'App\\Models\\Article' => __DIR__ . '/../..' . '/app/Models/Article.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',

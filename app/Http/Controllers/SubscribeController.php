@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subscriber;
+use App\Events\UserSubscribed;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\SubscriptionRequest;
-use App\Models\Subscriber;
 
 class SubscribeController extends Controller 
 {
@@ -16,6 +17,8 @@ class SubscribeController extends Controller
         $subscription = Subscriber::firstOrCreate(['email' => $email], ['name' => $name]);
         
         $subscription->subscribe();
+        
+        event(new UserSubscribed($subscription));
         
         return redirect()->back();
     }

@@ -2,6 +2,7 @@
 
 return [
     'admin_email' => env('ADMIN_EMAIL'),
+    'support_email' => env('SUPPORT_EMAIL', 'gudochkinav@gmail.com'),
     'horizon_moderator_email' => env('HORIZON_MODERATOR_EMAIL'),
     /*
     |--------------------------------------------------------------------------
