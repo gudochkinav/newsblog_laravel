@@ -140,7 +140,7 @@ return [
     */
 
     'environments' => [
-        'production' => [
+        'prod' => [
             'supervisor-1' => [
                 'connection' => 'redis',
                 'queue' => ['default'],
